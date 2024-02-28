@@ -1,0 +1,360 @@
+---
+title: $\LaTeX$
+subtitle: a crash course
+author: Dr Lucas França
+format: 
+  revealjs:
+    theme: [default, custom.scss]
+    logo: Northumbria_University_Logo.png
+title-slide-attributes:
+    data-background-video: cover.mp4
+    data-background-video-loop: true
+    data-background-video-muted: true
+    data-background-size: cover
+    data-background-opacity: "0.3"
+    data-footer: March 5th, 2024
+footer: '$\LaTeX$: a crash course - Dr Lucas França'
+include-after-body: add-custom-footer.html
+highlight-style: atom-one
+---
+
+# WYSIWYG {auto-animate="true" background-color="white" background-image="print.jpeg" background-opacity="0.2" background-size="cover"}
+
+# What You See Is What You Get {auto-animate="true" background-color="white" background-image="print.jpeg" background-opacity="0.2" background-size="cover"}
+
+::: incremental
+-   Word processors like
+    -   Microsoft Word
+    -   LibreOffice
+    -   Google Docs
+    -   Apple Pages
+:::
+
+# $\LaTeX$ {auto-animate="true" background-color="white" background-image="printers.jpeg" background-opacity="0.2" background-size="cover"}
+
+"LaTeX (/ˈlɑːtɛk/ LAH-tek or /ˈleɪtɛk/ LAY-tek, often stylized as $\LaTeX$) is a software system for typesetting documents. LaTeX markup describes the content and layout of the document, as opposed to the formatted text found in WYSIWYG word processors[^1]."
+
+[^1]: https://en.wikipedia.org/wiki/LaTeX
+
+<br> <br> <br>
+
+# The file structure {auto-animate="true" background-color="white" background-image="typer.jpeg" background-opacity="0.2" background-size="cover"}
+
+<br> <br>
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+-   Document class
+-   Packages
+-   Set metadata
+-   Begin/End document
+:::
+:::
+
+::: {.column width="50%"}
+``` latex
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\title{\LaTeX}
+
+\begin{document}
+
+\end{document}
+```
+:::
+:::
+
+# documentclass{} {auto-animate="true" background-color="white" background-image="typer.jpeg" background-opacity="0.2" background-size="cover"}
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+This command defines the document type. The most frquently used are:
+
+-   article
+-   book
+-   report
+:::
+:::
+
+::: {.column width="50%"}
+<br>
+
+``` {.latex code-line-numbers="1"}
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\title{\LaTeX}
+
+\begin{document}
+
+\end{document}
+```
+:::
+:::
+
+# usepackage{} {auto-animate="true" background-color="white" background-image="typer.jpeg" background-opacity="0.2" background-size="cover"}
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+Packages are used to expand capabilities of $\LaTeX$. Some examples are:
+
+-   amsmath
+-   graphicx
+-   xcolor
+:::
+:::
+
+::: {.column width="50%"}
+<br>
+
+``` {.latex code-line-numbers="3"}
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\title{\LaTeX}
+
+\begin{document}
+
+\end{document}
+```
+:::
+:::
+
+# Metadata {auto-animate="true" background-color="white" background-image="typer.jpeg" background-opacity="0.2" background-size="cover"}
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+These are defined in the preamble of the document and can be called in the main text.
+
+-   \\title
+-   \\subtitle
+-   \\author
+:::
+:::
+
+::: {.column width="50%"}
+<br>
+
+``` {.latex code-line-numbers="5"}
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\title{\LaTeX}
+
+\begin{document}
+
+\end{document}
+```
+:::
+:::
+
+# begin/end{} {auto-animate="true" background-color="white" background-image="typer.jpeg" background-opacity="0.2" background-size="cover"}
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+All elements withing these tags are part of the main text and will appear in the compiled file.
+
+-   Equations
+-   Figures
+-   Tables
+:::
+:::
+
+::: {.column width="50%"}
+<br>
+
+``` {.latex code-line-numbers="7-9"}
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\title{\LaTeX}
+
+\begin{document}
+
+\end{document}
+```
+:::
+:::
+
+# Mathematics {auto-animate="true" background-color="white" background-image="typer.jpeg" background-opacity="0.2" background-size="cover"}
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+-   Inline expressions
+    -   These go between two \$ signs
+-   Math mode
+    -   This used begin{equation} command
+:::
+:::
+
+::: {.column width="50%"}
+``` {.latex code-line-numbers="5,7-9"}
+\documentclass{article}
+
+\begin{document}
+
+Inline math $E = mc^2$
+
+\begin{equation}
+E = mc^2
+\end{equation}
+
+\end{document}
+```
+:::
+:::
+
+# Cross referencing {auto-animate="true" background-color="white" background-image="typer.jpeg" background-opacity="0.2" background-size="cover"}
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+Equations can be called from the main text.
+
+-   This can be achieved with two commands:
+    -   label{}
+    -   ref{}
+:::
+:::
+
+::: {.column width="50%"}
+``` {.latex code-line-numbers="5,7-10"}
+\documentclass{article}
+
+\begin{document}
+
+Call eq. \ref{eq:energy}.
+
+\begin{equation}
+E = mc^2
+\label{eq:energy}
+\end{equation}
+
+\end{document}
+```
+:::
+:::
+
+#  {.smaller auto-animate="true" background-color="white" background-image="typer.jpeg" background-opacity="0.2" background-size="cover"}
+
+A non-exaustive list of symbols[^2]
+
+[^2]: More here: <https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols>
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+![](greek.png){fig-align="center"}
+:::
+:::
+
+::: {.column width="50%"}
+![](bin.png){fig-align="center"}
+:::
+:::
+
+# Figures {.smaller auto-animate="true" background-color="white" background-image="typer.jpeg" background-opacity="0.2" background-size="cover"}
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+-   Defined with begin{figure}
+    -   h is for here. Check docs for additional options
+-   \\includegraphics actually includes the image
+    -   Set fig dimensions inside \[\]
+    -   Indicate filename inside {}
+-   label works in a similar way to the equations environment
+:::
+:::
+
+::: {.column width="50%"}
+``` {.latex code-line-numbers="3,7-10"}
+\documentclass{article}
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\begin{figure}[h]
+\includegraphics[width=8cm]{myplot}
+\label{fig:myfig1}
+\end{figure}
+
+\end{document}
+```
+:::
+:::
+
+# $Bib\TeX$ {auto-animate="true" background-color="white" background-image="typer.jpeg" background-opacity="0.2" background-size="cover"}
+
+::: incremental
+-   $Bib\TeX$ is a bibliography database file format.
+-   It is used in $LaTeX$ as basis for citations and referencing.
+-   $Bib\TeX$ files are often saved with the .bib extension.
+-   They have JSON-like semistructured format.
+-   Luckily we do not have to worry too much about those as most *reference managers* and journal websites can produce .bib files.
+:::
+
+# References {.smaller auto-animate="true" background-color="white" background-image="typer.jpeg" background-opacity="0.2" background-size="cover"}
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+- bibliographystyle{plain} defines the citation styles.
+  + There are several styles already included on $\LaTeX$.
+  + More styles can be included with .bst files.
+- bibliography{refs} generates a list of references cited in text and obtains $Bib\TeX$ information from refs.bib file.
+  + cite{} is used for citations. The name in brackets refers to the label defined in the .bib file.
+
+:::
+:::
+
+::: {.column width="50%"}
+``` {.latex code-line-numbers="5,7-9"}
+\documentclass{article}
+
+\begin{document}
+
+As previously seen elsewhere \cite{franca2024}.
+
+\bibliographystyle{plain}
+\bibliography{refs} 
+\end{document}
+```
+:::
+:::
+
+# Practical session {.smaller auto-animate="true" background-color="white" background-image="typer.jpeg" background-opacity="0.2" background-size="cover"}
+
+<br>
+<br>
+
+![](https://images.ctfassets.net/nrgyaltdicpt/6gsvc5Ogjmu04I4Miu0uGg/cb1d4391717d2ab8d5e42ede6fb0eef1/overleaf_wide_colour_light_bg.png){fig-align="center"}
